@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'  # Set Java version to 17
-          distribution: 'adoptopenjdk'  # Add the distribution (e.g., adoptopenjdk)
+          distribution: 'temurin'  # Change to 'temurin' for Adoptium JDK
 
       - name: Build with Maven
         run: mvn clean install
