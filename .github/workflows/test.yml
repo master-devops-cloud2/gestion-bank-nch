@@ -3,10 +3,10 @@ name: Maven Build and Test
 on:
   push:
     branches:
-      - main  # Adjust to your target branch (e.g., develop)
+      - main  # Or the branch you're working with
   pull_request:
     branches:
-      - main  # Adjust to your target branch (e.g., develop)
+      - main  # Or the branch you're working with
 
 jobs:
   build:
@@ -20,6 +20,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'  # Set Java version to 17
+          distribution: 'adoptopenjdk'  # Add the distribution (e.g., adoptopenjdk)
 
       - name: Build with Maven
         run: mvn clean install
