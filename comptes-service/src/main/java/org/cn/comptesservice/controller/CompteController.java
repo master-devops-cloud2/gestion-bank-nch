@@ -35,7 +35,7 @@ public class CompteController {
 
     @GetMapping("/{id}")
     public ResponseEntity<CompteDTO> getCompteById(@PathVariable Long id) {
-        System.out.println(":::::::: controller compte getting by id :::::::");
+        System.out.println(":::::::: controller compte getting :::::::");
         return ResponseEntity.ok(compteService.findById(id));
     }
 
