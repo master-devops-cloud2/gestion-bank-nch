@@ -3,13 +3,10 @@ name: Run Tests
 on:
   pull_request:
     branches:
-      - main
-  push:
-    branches:
-      - main
+      - main  # Trigger workflow for PRs targeting the 'main' branch
 
 jobs:
-  test:
+  ci:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,5 +19,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Install dependencies
+        run: mvn install -DskipTests  # Skip tests while installing dependencies
+
       - name: Run Tests
-        run: mvn test
+        run: mvn test  # Run the tests
