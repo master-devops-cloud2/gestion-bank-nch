@@ -1,15 +1,15 @@
 name: Run Tests
 
 on:
-  push:
-    branches:
-      - main  # Or the branch you're working with
   pull_request:
     branches:
-      - main  # Or the branch you're working with
+      - main
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,11 +19,8 @@ jobs:
       - name: Set up Java 17
         uses: actions/setup-java@v3
         with:
-          java-version: '17'  # Set Java version to 17
-          distribution: 'temurin'  # Change to 'temurin' for Adoptium JDK
-
-      - name: Build with Maven
-        run: mvn clean install
+          java-version: '17'
+          distribution: 'temurin'
 
       - name: Run Tests
         run: mvn test
