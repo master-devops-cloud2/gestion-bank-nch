@@ -27,6 +27,7 @@ public class CompteServiceImpl implements CompteService {
 
     @Override
     public CompteDTO findById(Long id) {
+        // find by id
         System.out.println(":::::: finding compte by id ::::::::");
         return compteMapper.fromCompte(compteRepository.findById(id).orElse(null));
     }
