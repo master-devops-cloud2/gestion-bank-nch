@@ -27,7 +27,8 @@ public class CompteServiceImpl implements CompteService {
 
     @Override
     public CompteDTO findById(Long id) {
-        System.out.println(":::::: finding compte ::::::::");
+        // find by id
+        System.out.println(":::::: finding compte by id ::::::::");
         return compteMapper.fromCompte(compteRepository.findById(id).orElse(null));
     }
 
@@ -39,6 +40,7 @@ public class CompteServiceImpl implements CompteService {
 
     @Override
     public void deleteById(Long id) {
+        // delete
         System.out.println(":::::: deleting compte ::::::::");
         compteRepository.deleteById(id);
 
